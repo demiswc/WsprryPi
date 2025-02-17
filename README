@@ -30,17 +30,7 @@ Installation / update:
     sudo apt-get install git
     git clone https://github.com/JamesP6000/WsprryPi.git
     cd WsprryPi
-    sudo nano mailbox.c
-    use down arrows to go to the line
-    above "#include "mailbox.h"
-    verify the line: 
-    #include <sys/sysmacros.h> 
-    is present.
-    If not edit and CTRL+O enter to save and/or CTRL+X close
-    
     sudo make
-
-  Install to /usr/local/bin:
     sudo make install
 
   Uninstall:
