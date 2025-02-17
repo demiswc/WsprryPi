@@ -5,7 +5,14 @@ port to Antenna (and LPF), operates on LF, MF, HF and VHF bands from
 0 to 250 MHz.
 
 Compatible with the original Raspberry Pi, the Raspberry Pi 2/3, and
-the Pi Zero.
+the Pi Zero and zero 2 w. 
+
+!!!!!! 
+2025-02-17
+When following the instructions below always use sudo in all commands - 
+I have edited where needed.
+I have edited the install. This was 
+done on a 64bit bullseye lite RPI os
 
 !!!!!!
 2017-04-21
@@ -19,10 +26,17 @@ https://github.com/JamesP6000/WsprryPi/issues/6#issuecomment-296233932
 Installation / update:
 ******
   Download and compile code:
+    sudo apt upgrade
     sudo apt-get install git
     git clone https://github.com/JamesP6000/WsprryPi.git
     cd WsprryPi
-    make
+    sudo nano mailbox.c
+    use down arrows to go to the line
+    above "#include "mailbox.h"
+    add the following: #include <sys/sysmacros.h>
+    CTRL+O then enter to save CTRL+X close
+    
+    sudo make
 
   Install to /usr/local/bin:
     sudo make install
@@ -41,9 +55,9 @@ Usage: (WSPR --help output):
   https://github.com/JamesP6000/WsprryPi/issues/10
 
   Usage:
-    wspr [options] callsign locator tx_pwr_dBm f1 <f2> <f3> ...
+    sudo ./wspr [options] callsign locator tx_pwr_dBm f1 <f2> <f3> ...
       OR
-    wspr [options] --test-tone f
+    sudo ./wspr [options] --test-tone f
 
   Options:
     -h --help
@@ -257,3 +271,5 @@ Credits:
   [4] This fork created by James:
       https://github.com/JamesP6000/WsprryPi
 
+  Tested working with zero compile errors or issues. 
+  Good Luck! 73's 2M0DDX. 
