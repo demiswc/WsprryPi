@@ -14,7 +14,7 @@ I have edited where needed.
 I have edited the install. This was 
 done on a 64bit bullseye lite RPI os
 
-edited mailbox.h ti include missing library 
+edited mailbox.h to include missing library 
 
 !!!!!!
 2017-04-21
