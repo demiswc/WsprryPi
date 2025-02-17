@@ -21,7 +21,7 @@ edited mailbox.h to include missing library
 Do note that some users have been reporting lockups with recent OS versions.
 I have not been able to reproduce the problems on my RPI1 and RPI3 running
 the latest Jessie-Lite.
-https://github.com/JamesP6000/WsprryPi/issues/6#issuecomment-296233932
+https://github.com/demiswc/WsprryPi.git
 !!!!!!
 
 ******
