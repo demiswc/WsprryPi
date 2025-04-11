@@ -35,7 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <sys/stat.h>
 #include <sys/sysmacros.h>
 #include "mailbox.h"
-
+#include <stdint.h>  // Include the header for intptr_t
 #define PAGE_SIZE (4*1024)
 
 void *mapmem(unsigned base, unsigned size)
@@ -59,7 +59,7 @@ void *mapmem(unsigned base, unsigned size)
     printf("base=0x%x, mem=%p\n", base, mem);
 #endif
     if (mem == MAP_FAILED) {
-        printf("mmap error %d\n", (int)mem);
+        printf("mmap error %ld\n", (intptr_t)mem); // This is the fixed line
         exit (-1);
     }
     close(mem_fd);
