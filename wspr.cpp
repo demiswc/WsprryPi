@@ -44,7 +44,7 @@
 #include <algorithm>
 #include <pthread.h>
 #include <sys/timex.h>
-
+#include <stdint.h>
 #ifdef __cplusplus
 extern "C" {
 #include "mailbox.h"
@@ -262,8 +262,8 @@ void getRealMemPageFromPool(void ** vAddr, void **bAddr) {
     ABORT(-1);
   }
   unsigned offset = mbox.pool_cnt*4096;
-  *vAddr = (void*)(((unsigned)mbox.virt_addr) + offset);
-  *bAddr = (void*)(((unsigned)mbox.bus_addr) + offset);
+  *vAddr = (void*)(((uintptr_t)mbox.virt_addr) + offset);
+  *bAddr = (void*)(((uintptr_t)mbox.bus_addr) + offset);
   //printf("getRealMemoryPageFromPool bus_addr=%x virt_addr=%x\n", (unsigned)*pAddr,(unsigned)*vAddr);
   mbox.pool_cnt++;
 }
